@@ -1,4 +1,5 @@
 import logging
+import time
 import os
 import textwrap
 
@@ -93,6 +94,7 @@ class UseStagerMenu(UseMenu):
         temp_record["template"] = self.record["id"]
 
         response = state.create_stager(temp_record)
+        time.sleep(0.5)
 
         if "detail" in response:
             log.error(response["detail"])
